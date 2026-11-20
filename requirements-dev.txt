@@ -1,0 +1,11 @@
+# Development and unit-test dependencies.
+-r requirements.txt
+pytest>=9.0.3
+pytest-mock>=3.14.0
+# Bring the Powertools + validation libs into the local venv so unit tests can
+# import the handler without the Lambda bundle.
+aws-lambda-powertools==3.2.0
+jsonschema==4.23.0
+# boto3 ships in the Lambda runtime, but is needed locally for Powertools imports.
+boto3>=1.34.0
+cdk-nag<3

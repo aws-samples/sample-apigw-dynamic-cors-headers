@@ -1,0 +1,18 @@
+{
+  "allowedOrigins": [
+    "https://app.example.com",
+    "https://admin.example.com"
+  ],
+  "allowedMethods": ["GET", "POST", "OPTIONS"],
+  "allowedHeaders": ["Content-Type", "Authorization", "X-Amz-Date", "X-Api-Key", "X-Amz-Security-Token"],
+  "allowCredentials": true,
+  "maxAgeSeconds": 600,
+  "securityHeaders": {
+    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy": "no-referrer",
+    "Cache-Control": "no-store"
+  }
+}

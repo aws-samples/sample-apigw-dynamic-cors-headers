@@ -1,0 +1,29 @@
+# CDK
+cdk.out/
+.cdk.staging/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.claude/
+*.egg-info/
+
+# Bundled Lambda dependencies (produced at synth time)
+src/**/.deps/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# ASH scan output + config (kept local only, not published)
+.ash/
+
+# Security-review evidence — attach to the review ticket, not published in the repo
+docs/validation.md
+THREAT_MODEL.md
+docs/licenses.txt
+docs/pip-audit.txt

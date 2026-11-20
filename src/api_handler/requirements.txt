@@ -1,0 +1,6 @@
+# Runtime dependencies bundled into the API handler Lambda package.
+# Powertools provides the middleware factory, structured Logger/Tracer, and the
+# AppConfigProvider used to read dynamic configuration.
+aws-lambda-powertools==3.2.0
+# Required by Powertools Tracer (X-Ray). Not present in the base Lambda runtime.
+aws-xray-sdk==2.14.0

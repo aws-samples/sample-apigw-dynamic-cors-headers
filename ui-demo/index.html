@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dynamic CORS Pattern — Browser Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Dynamic CORS &amp; Security Headers — Browser Demo</h1>
+  <p class="muted">
+    This page's own origin is
+    <code id="origin"></code>. If this origin is in the AppConfig allowlist, the
+    <code>fetch()</code> below succeeds. If not, the browser blocks the response
+    with a CORS error — proving another site cannot read the API. Change the
+    allowlist in AWS AppConfig (no redeploy) and reload to see the behavior flip.
+  </p>
+
+  <div class="card">
+    <p class="muted">
+      This demo calls the endpoint configured in <code>app.js</code>
+      (<code>API_ENDPOINT</code>): <code id="endpoint"></code>. Edit that constant
+      to your deployed <code>/hello</code> URL, then redeploy the page.
+    </p>
+    <p class="muted note">
+      The API uses AWS_IAM auth, so a raw browser GET returns 403 unless signed.
+      This demo issues an unauthenticated <strong>preflight OPTIONS</strong>
+      request, which is exactly what exercises the CORS decision in the browser.
+    </p>
+    <button id="go">Send preflight (OPTIONS) from this origin</button>
+  </div>
+
+  <div class="card">
+    <strong>Result</strong>
+    <pre id="out">No request sent yet.</pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
